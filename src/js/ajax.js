@@ -3,7 +3,7 @@
     let dataApi = await fetch("https://api.punkapi.com/v2/beers");
     let beers = await dataApi.json();
     let $beerList = document.querySelector(".beer-list");
-    console.log(beers);
+    // console.log(beers);
 
     let data = [];
     beers.map(v => {
