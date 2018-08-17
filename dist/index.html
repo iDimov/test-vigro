@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Postcss</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+</head>
+
+<body>
+  
+  <div class="wrapper">
+    <main class="beer">
+      <header class="beer-header">
+        <input type="text" class="search" placeholder="search" />
+        <nav class="sort">
+          <a href="#" data-order="desc" class="sort__link sort__link-id">number</a>
+          <a href="#" data-order="desc" class="sort__link sort__link-name">name</a>
+          <a href="#" data-order="asc" class="sort__link sort__link-year">year</a>
+        </nav>
+      </header>
+
+      <div class="beer-list">
+
+      </div>
+      <div id="beer-dialog">
+      </div>
+      <div id="preloader"></div>
+    </main>
+  </div>
+  <script id="beers-template" type="text/x-handlebars-template">
+    {{#each this}}
+      <div class="beer-item" data-id={{id}} data-name="{{name}}" data-year="{{year}}">
+        <img src="{{image_url}}" class="beer-item__img" alt="{{name}}" />
+        <h2 class="beer-item__title">{{name}}</h2>
+        <div class="beer-item__brewed">
+          {{year}}
+        </div>
+        <p class="beer-item__description">
+          {{tagline}}
+        </p>
+        <a href="#" class="btn-primary">Details</a>
+      </div>
+      {{/each}}
+  </script>
+  <script id="beer-template" type="text/x-handlebars-template">
+    <div class="beer-dialog">
+      <i class="beer-dialog__close">x</i>
+      <img src="{{image_url}}" class="beer-dialog__img" alt="{{name}}" />
+      <div class="beer-dialog-right">
+        <h2 class="beer-dialog__title">{{name}}</h2>
+        <div class="beer-dialog__brewed">
+            <strong>first brewed:</strong> {{first_brewed}}
+        </div>
+        <p class="beer-dialog__tagline">
+            <strong>tagline:</strong> {{tagline}}
+        </p>
+        <p class="beer-dialog__description">
+            <strong>description:</strong> {{description}}
+        </p>
+        <p class="beer-dialog__description">
+            <strong>Boil Volume:</strong> {{boil_volume.value}}, {{boil_volume.unit}} 
+        </p>
+        <h4>
+            Food pairing
+        </h4>
+        <ul>
+        {{#each food_pairing}}
+            <li>{{this}}</li>
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
+  
+
+  <script src="/js/all.js"></script>
+</body>
+
+</html>

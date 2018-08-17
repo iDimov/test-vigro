@@ -1,0 +1,46 @@
+.beer-header {
+  min-height: 70px;
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--primary);
+
+  .sort__link {
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 20px;
+    text-decoration: none;
+    border-bottom: 2px dotted var(--primary);
+  }
+  .search {
+    height: 33px;
+    min-width: 250px;
+    padding: 0 0 0 10px;
+    outline: none;
+    border: 3px solid var(--primary);
+    transition: all 0.7s ease;
+    &:focus {
+      border: 3px solid #3989b9;
+    }
+  }
+}
+@media (max-width: 620px) {
+  .beer-header {
+    flex-wrap: wrap;
+    padding: 20px 0;
+    justify-content: center;
+    .search {
+      width: 100%;
+    }
+    .sort__link {
+      margin: 15px 10px 0;
+      display: inline-block;
+      &:first-child {
+        margin: 15px 10px 0 0;
+      }
+    }
+  }
+}

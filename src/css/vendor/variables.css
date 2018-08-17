@@ -1,0 +1,8 @@
+:root {
+  --font-roboto: "Roboto", sans-serif;
+  /* --font-sans: "OpenSans", sans-serif; */
+
+  --default: rgba(0, 0, 0, 0.87);
+  --primary: #47a3da;
+  --light: #c0c0c0;
+}
